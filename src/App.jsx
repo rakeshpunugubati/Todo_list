@@ -3,11 +3,7 @@ import TodoInput from './Components/TodoInput'
 import TodoList from './Components/TodoList'
 import { stringify } from 'postcss';
 function App() {
-  const [todos, setTodos] = useState([
-    'Go to the gym',
-    'Eat more furits and vegie',
-    'Learn React'
-  ]);
+  const [todos, setTodos] = useState([]);
   const [todoValue, setTodoValue] = useState('')
 
   function updateLocalStorage(newtodos){
@@ -37,8 +33,6 @@ function App() {
     let localdata = localStorage.getItem('todos');
     if (localdata) {
       setTodos(JSON.parse(localdata));
-    }else{
-      localStorage.setItem('todos' , JSON.stringify(todos));
     }
   }, []);
   
